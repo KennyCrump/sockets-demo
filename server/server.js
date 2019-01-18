@@ -42,7 +42,7 @@ io.on('connection', socket => {
 
     socket.on('emit message to room', data => {
         console.log('room socket hit: emit ', data.room)
-        socket.to(data.room).emit('generate room response', data)
+        socket.emit('generate room response', data)
     })
 
     socket.on('broadcast message to room', data => {
