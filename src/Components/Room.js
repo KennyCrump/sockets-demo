@@ -10,9 +10,7 @@ class Room extends Component {
       userTyping: false
     };
     this.socket = io.connect(":4777");
-    this.socket.on("generate general response", data =>
-      this.generalResponse(data)
-    );
+    this.socket.on("generate general response", data => this.generalResponse(data));
     this.socket.on("generate room response", data => this.roomResponse(data));
     this.socket.on("user is typing", data => this.setUserTyping(data));
     this.socket.on(`user not typing`, data => this.removeUserTyping(data));

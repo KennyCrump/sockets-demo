@@ -25,6 +25,8 @@ io.on('connection', socket => {
         io.sockets.emit('generate general response', data);
     });
 
+
+    //USER IS TYPING NOTIFICATION
     socket.on('user is typing', data => {
         socket.broadcast.emit('user is typing', data)
     })
