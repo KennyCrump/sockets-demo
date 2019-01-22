@@ -17,7 +17,7 @@ class Room extends Component {
   }
   componentDidMount() {
     if (this.props.room) {
-      this.socket.emit("join room", { room: this.props.room });
+      this.socket.emit("join room ", { room: this.props.room });
     }
   }
   generalResponse(data) {
